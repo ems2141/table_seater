@@ -19,9 +19,19 @@ class TableSeater
     end
     pairs
 
-    # iterate through each pair
+    results = []
+    pairs.each do |key, value|
+      if !results.include?(key)
+        results << key
+      elsif !results.include?(value)
+        results << value
+      elsif (pairs[value] != nil) && (!results.include?(pairs[value]))
+        results << pairs[value]
+      end
+    end
+    results
     # for each person/key, make sure that they sit next to their value
-    # check if the value is a key and put them next to their value
+    # check if the value is a key elsewhere in the pairs hash and put them next to their value
     # move to next pair
 
   end
