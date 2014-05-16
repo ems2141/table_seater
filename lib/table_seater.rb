@@ -4,7 +4,7 @@ class TableSeater
     p @people.length-2
   end
 
-  def arrange
+  def arrange_every_other
     i = 0
     first_half = []
     second_half = []
@@ -18,5 +18,24 @@ class TableSeater
       i += 1
     end
     first_half.concat(second_half)
+  end
+
+  def arrange_every_third
+    first_third = []
+    second_third = []
+    last_third = []
+    i = 0
+
+    @people.each do |person|
+      if i%2 == 0
+        first_third << person
+      elsif i%3 == 0
+        second_third << person
+      else
+        last_third << person
+      end
+      i += 1
+    end
+
   end
 end
