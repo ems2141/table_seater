@@ -27,15 +27,15 @@ class TableSeater
     i = 0
 
     @people.each do |person|
-      if i%2 == 0
+      if i%3 == 0
         first_third << person
-      elsif i%3 == 0
+      elsif i%3 == 1
         second_third << person
       else
         last_third << person
       end
       i += 1
     end
-
+    first_third.concat(second_third).concat(last_third)
   end
 end
